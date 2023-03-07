@@ -7,12 +7,16 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { MongoClient, ServerApiVersion } from 'mongodb';
+import authRoute from './routes/authRoute.js'
 
 //configure env
 dotenv.config();
 
 //rest object
 const app = express()
+
+//routes 
+app.use("/api/v1/auth", authRoute)
 
 //rest api
 
